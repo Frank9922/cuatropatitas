@@ -1,19 +1,19 @@
-import { useDispatch } from "react-redux";
-import { startLoginWithEmailAndPassword } from "./store/auth";
+import { Provider } from "react-redux"
+import { AppRouter } from "./router"
+import { BrowserRouter } from "react-router-dom"
+import { store } from "./store"
+import { ChakraProvider } from "@chakra-ui/react"
+
 
 export const CuatroPatitas = () => {
 
-    const dispatch = useDispatch();
-
-    const onlogin = () => {
-        console.log('onlogin');
-        dispatch(startLoginWithEmailAndPassword())
-
-    }
-
   return (
-    <button onClick={onlogin}>
-        Cuatro Patitas app
-    </button>
+    <Provider store={store}>
+      <ChakraProvider>
+        <BrowserRouter>
+          <AppRouter />
+        </BrowserRouter>
+      </ChakraProvider>
+    </Provider>
   )
 }

@@ -1,6 +1,11 @@
+import { HomeLayout } from "../../page/HomeLayout"
 
 export const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <HomeLayout>
+        <div>
+          LoginPage
+        </div>
+    </HomeLayout>
   )
 }
